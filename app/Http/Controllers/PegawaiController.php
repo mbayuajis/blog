@@ -11,7 +11,7 @@ class PegawaiController extends Controller
     {
       $data_pegawai = \App\Pegawai::all();//menggambil seluruh data yang ada di tabel pegawai|app adalah namespace
       
-      return view('pegawai.index', ['data_pegawai' => $data_pegawai]); //asosiativ array
+      return view('pegawai.index', ['data_pegawai' => $data_pegawai, 'active' => 'pegawai']); //asosiativ array
     }
 
     // private $welcome = 0;
@@ -54,7 +54,7 @@ class PegawaiController extends Controller
     {
       $pegawai = \App\Pegawai::find($id);
       Alert::success('Succes', 'Data Berhasil Di Edit');
-      return view('pegawai/edit', ['pegawai'=> $pegawai]);
+      return view('pegawai/edit', ['pegawai'=> $pegawai, 'active' => 'pegawai']);
     }
 
     public function update(Request $request, $id) //mengubah data pegawai

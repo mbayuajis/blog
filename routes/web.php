@@ -21,11 +21,16 @@ Route::get('/login', 'AdminController@login');
 Route::get('/profilperusahaan', 'ProfilController@index');
 
 Route::middleware('auth')->group(function () {
-	Route::get('/pegawai', 'PegawaiController@index');
+	Route::get('/pegawai', 'PegawaiController@index')->name('pegawai');
 	Route::post('/pegawai/create', 'PegawaiController@create')->name('pegawai.create');
 	Route::get('/pegawai/{id}/edit', 'PegawaiController@edit');
 	Route::post('/pegawai/{id}/update', 'PegawaiController@update')->name('pegawai.update');
 	Route::get('/pegawai/{id}/delete', 'PegawaiController@delete');
+	Route::get('/lowker', 'LowonganPekerjaanController@indexdash')->name('lowker');
+	Route::post('/lowker', 'LowonganPekerjaanController@create')->name('lowker.create');
+	Route::get('/lowker/{id}/edit', 'LowonganPekerjaanController@edit');
+	Route::post('/lowker/{id}/update', 'LowonganPekerjaanController@update')->name('lowker.update');
+	Route::get('/lowker/{id}/delete', 'LowonganPekerjaanController@delete');
 });
 
 Route::get('logout', 'Auth\LoginController@logout')->name('logout');

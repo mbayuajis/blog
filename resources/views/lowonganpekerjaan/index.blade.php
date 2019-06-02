@@ -78,8 +78,8 @@
 										<a href="lowongankerja/{{$lowongan->id}}" data-toggle="modal" data-target="#{{$lowongan->id}}" >{{$lowongan->nama_pekerjaan}}</a>
 									</div>
 									<!-- deskripsi pekerjaan -->
-									{{$lowongan->deskripsi_pekerjaan}}<br>
-									{{$lowongan->syarat_pekerjaan}}
+									{!!$lowongan->deskripsi_pekerjaan!!}<br>
+									{!!$lowongan->syarat_pekerjaan!!}
 
 
 								</div>
@@ -104,7 +104,7 @@
 						      <div class="container">
 
 						        <div class="">
-						          {{$lowongan->deskripsi_pekerjaan}}
+						          {!!$lowongan->deskripsi_pekerjaan!!}
 						        </div>
 						      </div>
 						    </div>

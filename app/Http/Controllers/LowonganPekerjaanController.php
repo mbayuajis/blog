@@ -3,9 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\LowonganPekerjaan;
+use Alert;
 
 class LowonganPekerjaanController extends Controller
 {
+
+    public function indexdash()
+    {
+        return view('lowonganpekerjaan.indexdash', ['lowkers' => LowonganPekerjaan::all(), 'active' => 'lowker']);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -24,9 +32,15 @@ class LowonganPekerjaanController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        LowonganPekerjaan::create([
+            'nama_pekerjaan' => $request->nama_pekerjaan,
+            'deskripsi_pekerjaan' => $request->deskripsi_pekerjaan,
+            'syarat_pekerjaan' => $request->syarat_pekerjaan
+        ]);
+
+        return redirect(route('lowker'));
     }
 
     /**
@@ -62,7 +76,8 @@ class LowonganPekerjaanController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data_lowonganpekerjaan = \App\LowonganPekerjaan::find($id);
+        return view('lowonganpekerjaan.edit', ['lowker' => $data_lowonganpekerjaan, 'active' => 'lowker']);
     }
 
     /**
@@ -74,7 +89,13 @@ class LowonganPekerjaanController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        LowonganPekerjaan::where('id', $id)->update([
+            'nama_pekerjaan' => $request->nama_pekerjaan,
+            'deskripsi_pekerjaan' => $request->deskripsi_pekerjaan,
+            'syarat_pekerjaan' => $request->syarat_pekerjaan
+        ]);
+
+        return redirect(route('lowker'));
     }
 
     /**
@@ -86,5 +107,13 @@ class LowonganPekerjaanController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function delete($id) //menghapus data lowker
+    {
+      $lowker = LowonganPekerjaan::find($id);
+      $lowker->delete($lowker);
+        Alert::success('Succes', 'Data Berhasil di Hapus');
+        return redirect(route('lowker'))->with('success', 'Data Berhasil di Delete');
     }
 }
