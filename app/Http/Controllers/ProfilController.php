@@ -3,9 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\ProfilPerusahaan;
 
 class ProfilController extends Controller
 {
+    public function indexdash()
+    {
+        return view('profilperusahaan.indexdash', ['pp' => ProfilPerusahaan::first(), 'active' => 'pp']);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -13,7 +19,7 @@ class ProfilController extends Controller
      */
     public function index()
     {
-      return view('profilperusahaan.index');
+      return view('profilperusahaan.index', ['pp' => ProfilPerusahaan::first()]);
 
     }
 
@@ -69,7 +75,11 @@ class ProfilController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        ProfilPerusahaan::where('id', $id)->update([
+            'profil' => $request->profil
+        ]);
+
+        return redirect(route('profilper'));
     }
 
     /**

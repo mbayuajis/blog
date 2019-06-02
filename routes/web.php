@@ -31,11 +31,11 @@ Route::middleware('auth')->group(function () {
 	Route::get('/lowker/{id}/edit', 'LowonganPekerjaanController@edit');
 	Route::post('/lowker/{id}/update', 'LowonganPekerjaanController@update')->name('lowker.update');
 	Route::get('/lowker/{id}/delete', 'LowonganPekerjaanController@delete');
+	Route::get('/visidanmisi', 'VisiMisiController@indexdash')->name('visimisi');
+	Route::post('/visidanmisi/{id}/update', 'VisiMisiController@update')->name('visimisi.update');
+	Route::get('profilper', 'ProfilController@indexdash')->name('profilper');
+	Route::post('profilper/{id}/update', 'ProfilController@update')->name('profilper.update');
 });
-
-
-Route::get('/visidanmisi', 'VisiMisiController@indexdash')->name('visimisi');
-Route::post('/visidanmisi/{id}/update', 'VisiMisiController@update')->name('visimisi.update');
 
 Route::get('logout', 'Auth\LoginController@logout')->name('logout');
 Auth::routes();

@@ -118,6 +118,7 @@
         <li class="nav-item {{ $active=='pegawai' ? 'active' : '' }}"><a href="{{ route('pegawai') }}"><i class="fa fa-list"></i><span>Pegawai</span></span></i></a></li>
         <li class="nav-item {{ $active=='lowker' ? 'active' : '' }}"><a href="{{ route('lowker') }}"><i class="fa fa-list"></i><span>Lowongan Pekerjaan</span></span></i></a></li>
         <li class="nav-item {{ $active=='visimisi' ? 'active' : '' }}"><a href="{{ route('visimisi') }}"><i class="fa fa-list"></i><span>Visi dan Misi</span></span></i></a></li>
+        <li class="nav-item {{ $active=='pp' ? 'active' : '' }}"><a href="{{ route('profilper') }}"><i class="fa fa-list"></i><span>Profil Perusahaan</span></span></i></a></li>
       </ul>
     </section>
     <!-- /.sidebar -->
@@ -358,6 +359,7 @@
     $('.syarat_pekerjaan').wysihtml5()
     $('.visi').wysihtml5()
     $('.misi').wysihtml5()
+    $('.profil').wysihtml5()
   })
 </script>
 

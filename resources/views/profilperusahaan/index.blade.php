@@ -61,20 +61,8 @@
 				<h2 class="text-uppercase" style="text-align: center;">Profil Perusahaan</h2>
 			</div>
       <div class="entry-content" style="padding-left:80px; font-size:16px;padding-right:80px;">
-        <br>
-  		<p style="text-align: justify;">PT&nbsp; Graha Bara Lestari berdiri pada tahun 2000, tepatnya pada tanggal 2 Oktober tahun 2000, sesuai dengan Akta
-				Pendirian Perseroan Terbatas No. 2 dengan Notaris Agus Madjid, SH dan disahkan oleh Menteri Hukum dan Hak Asasi Manusia. Perusahaan kami memulai
-				 usahanya sebagai Perusahaan yang bergerak di bidang Perdagangan Barang dengan bidang usaha pokok hasil pertambangan (batubara), Pengadaan alat teknik
-				  elektrikal, telekomunikasi, dan alat pencatat meteran listrik.</p>
-  		<p style="text-align: justify;">Pada tahun 2005 PT Graha Bara Lestari menjadi mitra perusahaan BUMN sebagai&nbsp; <strong>Kontraktor Listrik</strong>
-				 &nbsp;yang telah mengerjakan proyek pembangunan dan perbaikan jaringan listrik tegangan menengah, selain&nbsp; itu juga mengelola sistem manajemen
-				  baca meter di DKI Jakarta. Saat ini usaha tersebut sudah mencapai&nbsp; Jawa Barat dan Palembang.</p>
-  		<p style="text-align: justify;">Sebagai &nbsp;perusahaan Niaga, kami berhasil menjadi perwakilan salah satu perusahaan penyedia peralatan<strong>
-				‘waist management’</strong> terkemuka yang berpusat di Italia. Dengan servis yang kami berikan, klien kami bisa mendapatkan peralatan yang bermutu
-				dengan harga yang ekonomis.&nbsp;Dibidang tenaga kerja, kami juga mengelola penyediaan tenaga profesional, yang lazim disebut dengan
-				<strong>Headhunter</strong>. Untuk tenaga lapangan, PT Graha Bara Lestari, menyediakan <strong>jasa alih daya Cleaning Service Staff.</strong></p>
-  		<p style="text-align: justify;">Sejalan dengan ketertarikan kami pada bidang sumber daya manusia, PT Graha Bara Lestari juga mengerjakan pelatihan dan
-				seminar yang dibutuhkan dan disesuaikan dengan keinginan klien kami.</p>
+        {!! $pp->profil !!}
+  		
   		</div>
 			<!-- end section-->
 
