@@ -1,0 +1,9 @@
+//untuk membuat tabel dari cmd
+php artisan make:migration create_"nama"_tabel --create="nama"
+
+//untuk membuat controller 
+php artisan make:controller "Nama"Controller
+
+//membuat model nya(yang akan merepresentasikan ke tabel )
+php artisan make:model "nama"
+
