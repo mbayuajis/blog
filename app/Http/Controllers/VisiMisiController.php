@@ -3,9 +3,15 @@
 namespace App\Http\Controllers;
 use Alert;
 use Illuminate\Http\Request;
+use App\VisiMisi;
 
 class VisiMisiController extends Controller
 {
+    public function indexdash()
+    {
+        return view('visimisi.indexdash', ['visimisi' => VisiMisi::first(), 'active' => 'visimisi']);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -72,7 +78,12 @@ class VisiMisiController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        VisiMisi::where('id', $id)->update([
+            'visi' => $request->visi,
+            'misi' => $request->misi,
+        ]);
+
+        return redirect(route('visimisi'));
     }
 
     /**

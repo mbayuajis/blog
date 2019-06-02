@@ -117,6 +117,7 @@
         <li class="nav-item"><a href=""><i class="fa fa-home"></i><span>Dashboard</span></span></i></a></li>
         <li class="nav-item {{ $active=='pegawai' ? 'active' : '' }}"><a href="{{ route('pegawai') }}"><i class="fa fa-list"></i><span>Pegawai</span></span></i></a></li>
         <li class="nav-item {{ $active=='lowker' ? 'active' : '' }}"><a href="{{ route('lowker') }}"><i class="fa fa-list"></i><span>Lowongan Pekerjaan</span></span></i></a></li>
+        <li class="nav-item {{ $active=='visimisi' ? 'active' : '' }}"><a href="{{ route('visimisi') }}"><i class="fa fa-list"></i><span>Visi dan Misi</span></span></i></a></li>
       </ul>
     </section>
     <!-- /.sidebar -->
@@ -355,6 +356,8 @@
     $('#tabelPegawai').DataTable()
     $('.deskripsi_pekerjaan').wysihtml5()
     $('.syarat_pekerjaan').wysihtml5()
+    $('.visi').wysihtml5()
+    $('.misi').wysihtml5()
   })
 </script>
 

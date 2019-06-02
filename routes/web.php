@@ -33,6 +33,10 @@ Route::middleware('auth')->group(function () {
 	Route::get('/lowker/{id}/delete', 'LowonganPekerjaanController@delete');
 });
 
+
+Route::get('/visidanmisi', 'VisiMisiController@indexdash')->name('visimisi');
+Route::post('/visidanmisi/{id}/update', 'VisiMisiController@update')->name('visimisi.update');
+
 Route::get('logout', 'Auth\LoginController@logout')->name('logout');
 Auth::routes();
 
